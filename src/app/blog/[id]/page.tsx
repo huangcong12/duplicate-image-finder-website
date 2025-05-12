@@ -51,8 +51,6 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         </Link>
         
         <article>
-          <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-          
           <div className="flex items-center text-gray-500 mb-8">
             <time dateTime={postData.date}>
               {new Date(postData.date).toLocaleDateString('en-US', {
