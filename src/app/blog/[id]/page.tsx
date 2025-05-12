@@ -1,15 +1,41 @@
 import Link from 'next/link';
-import { getPostData, getAllPostIds } from '../../../lib/blog';
+import { getPostData, getAllPostIds, getSortedPostsData } from '../../../lib/blog';
 import ReactMarkdown from 'react-markdown';
+import type { Metadata, ResolvingMetadata } from 'next';
 
-export async function generateStaticParams() {
-  const paths = getAllPostIds();
-  return paths;
+export function generateStaticParams() {
+  // Get all post IDs and format them correctly for static export
+  const postIds = getAllPostIds();
+  return postIds;
 }
 
-export default async function Post({ params }: { params: { id: string } }) {
+// Generate metadata for SEO
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // Await the params object before accessing its properties
+  const resolvedParams = await params;
+  const postData = await getPostData(resolvedParams.id);
+  
+  return {
+    title: postData.title,
+    description: postData.excerpt,
+    openGraph: {
+      title: postData.title,
+      description: postData.excerpt,
+      type: 'article',
+      publishedTime: postData.date,
+      authors: postData.author ? [postData.author] : undefined,
+    },
+  };
+}
+
+export default async function Post({ params }: { params: Promise<{ id: string }> }) {
+  // Await the params object before accessing its properties
+  const resolvedParams = await params;
   // 获取博客文章数据
-  const postData = await getPostData(params.id);
+  const postData = await getPostData(resolvedParams.id);
   
   return (
     <div className="container mx-auto px-4 py-12">

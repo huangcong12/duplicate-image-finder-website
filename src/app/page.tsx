@@ -1,4 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+// Force static generation
+export const dynamic = 'force-static';
+
+// Generate metadata for SEO
+export const metadata: Metadata = {
+  title: "OH - Duplicate Image Scanner | Find & Remove Duplicate Images in Shopify",
+  description: "OH - Duplicate Image Scanner helps you identify and manage duplicate images in your Shopify store, saving storage space and improving performance.",
+};
 
 export default function Home() {
   return (

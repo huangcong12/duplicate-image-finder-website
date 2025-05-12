@@ -1,7 +1,17 @@
 import Link from 'next/link';
 import { getSortedPostsData } from '../../lib/blog';
+import type { Metadata } from 'next';
 
-export default async function Blog() {
+// Force static generation
+export const dynamic = 'force-static';
+
+// Generate metadata for SEO
+export const metadata: Metadata = {
+  title: 'Blog | OH - Duplicate Image Scanner',
+  description: 'Learn more about duplicate image management, Shopify optimization, and best practices for your online store.',
+};
+
+export default function Blog() {
   const allPostsData = getSortedPostsData();
 
   return (

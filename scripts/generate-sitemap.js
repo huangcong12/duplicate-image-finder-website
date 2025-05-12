@@ -3,7 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 
 // 网站基础 URL
-const WEBSITE_URL = 'https://oh-duplicate-image-finder.com';
+const WEBSITE_URL = 'https://duplicate.litacat.com';
 
 // 获取所有博客文章的 ID
 function getAllPostIds() {
