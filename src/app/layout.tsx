@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,12 +30,12 @@ export default function RootLayout({
       >
         <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
-            <a href="/" className="flex items-center font-bold text-xl">
+            <Link href="/" className="flex items-center font-bold text-xl">
               <span>OH - Duplicate Image Scanner</span>
-            </a>
+            </Link>
             <nav className="flex items-center gap-6">
-              <a href="/" className="text-sm font-medium hover:text-blue-600">Home</a>
-              <a href="/blog" className="text-sm font-medium hover:text-blue-600">Blog</a>
+              <Link href="/" className="text-sm font-medium hover:text-blue-600">Home</Link>
+              <Link href="/blog" className="text-sm font-medium hover:text-blue-600">Blog</Link>
               <a href="https://apps.shopify.com/duplicate-image-scanner" className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700" target="_blank" rel="noopener noreferrer">
                 Get the App
               </a>

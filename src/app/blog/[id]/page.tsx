@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import { getPostData, getAllPostIds } from '../../../lib/blog';
-import { formatDate } from '../../../lib/utils';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
