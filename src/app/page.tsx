@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,12 +23,12 @@ export default function Home() {
             >
               Install App
             </a>
-            <a 
+            <Link 
               href="/blog" 
               className="rounded-md bg-white border border-gray-300 px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             >
               Read Our Blog
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 mb-4">"This app saved me hours of work! I had no idea how many duplicate images were taking up space in my store. Highly recommended for any Shopify store owner."</p>
+              <p className="text-gray-600 mb-4">&quot;This app saved me hours of work! I had no idea how many duplicate images were taking up space in my store. Highly recommended for any Shopify store owner.&quot;</p>
               <p className="font-semibold">- Sarah T., Fashion Retailer</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -121,7 +121,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 mb-4">"Our store's performance improved noticeably after cleaning up duplicate images. The app is intuitive and the support team is very responsive."</p>
+              <p className="text-gray-600 mb-4">"Our store&apos;s performance improved noticeably after cleaning up duplicate images. The app is intuitive and the support team is very responsive."</p>
               <p className="font-semibold">- Michael R., Home Goods Store</p>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function Home() {
       <section className="w-full py-12 md:py-24 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Optimize Your Shopify Store?</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">Start finding and removing duplicate images today to improve your store's performance.</p>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">Start finding and removing duplicate images today to improve your store&apos;s performance.</p>
           <a 
             href="https://apps.shopify.com/duplicate-image-scanner" 
             className="inline-block rounded-md bg-white px-6 py-3 text-base font-medium text-blue-600 hover:bg-gray-100 transition-colors"
